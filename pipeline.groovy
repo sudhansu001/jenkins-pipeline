@@ -11,10 +11,10 @@ pipeline{
                 sayHello "Dave"
             }
         }
-        stage("Build"){
-            steps{
-                build_mvn [tool: "maven", args: "-Drelease_number=${params.release_number}"]
-            }
-        }
+        // stage("Build"){
+        //     steps{
+        //         build_mvn [tool: "maven", args: "-Drelease_number=${params.release_number}"]
+        //     }
+        // }
     }
 }
