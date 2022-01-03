@@ -2,7 +2,7 @@
 
 pipeline{
     agent any
-    paramters{
+    parameters {
         string(name: 'release_number', defaultValue: '0.0.0.1', description: 'Release Number for the Application')
     }
     stages{
