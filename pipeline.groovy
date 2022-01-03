@@ -5,7 +5,7 @@ pipeline{
     stages{
         stage("Initialize Pipeline"){
             steps{
-                echo "Initialize"
+                sayHello "Dave"
             }
         }
         stage("Build"){
