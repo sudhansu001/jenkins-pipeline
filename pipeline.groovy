@@ -13,7 +13,7 @@ pipeline{
         }
         stage("Build"){
             steps{
-                build([tool: "maven", args: "-Drelease_number=${params.release_number}"])
+                build [tool: "maven", args: "-Drelease_number=${params.release_number}"]
             }
         }
     }
