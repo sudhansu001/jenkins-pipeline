@@ -2,6 +2,9 @@
 
 pipeline{
     agent any
+    paramters{
+        string(name: 'release_number', defaultValue: '0.0.0.1', description: 'Release Number for the Application')
+    }
     stages{
         stage("Initialize Pipeline"){
             steps{
@@ -10,32 +13,7 @@ pipeline{
         }
         stage("Build"){
             steps{
-                echo "Build code"
-            }
-        }
-        stage("Code Quality"){
-            steps{
-                echo "Run Code quality"
-            }
-        }
-        stage("Artifactory"){
-            steps{
-                echo "Upload Artifact to Artifactory"
-            }
-        }
-        stage("IAC Provision"){
-            steps{
-                echo "Provision Architecture"
-            }
-        }
-        stage("IAC Deploy"){
-            steps{
-                echo "Deploy Container"
-            }
-        }
-        stage("IAC Destroy"){
-            steps{
-                echo "Destroy Container"
+                build([tool: "maven", args: "-Drelease_number=${params.release_number}"])
             }
         }
     }
