@@ -1,3 +1,4 @@
+@Library('pipeline_lib')
 pipeline{
     agent any
     stages{
