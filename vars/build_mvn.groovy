@@ -6,7 +6,7 @@ def call (Map config = [tool: "mvn", args: ""]){
             bat """
                  git init
                  git remote add origin ${scmUrl}
-                 git pull origin master
+                 git pull origin main
                  """
             bat "mvn clean install ${config.args}"
         }
