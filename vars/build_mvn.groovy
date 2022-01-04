@@ -4,7 +4,6 @@ def call (Map config = [tool: "mvn", args: ""]){
         def scmUrl = scm.getUserRemoteConfigs()[0].getUrl()
         node {
             bat "git clone ${scmUrl} ."
-
             bat "mvn clean install ${config.args}"
         }
     }
